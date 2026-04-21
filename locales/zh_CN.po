@@ -1,0 +1,137 @@
+# Chinese translations for Damped Track Chain
+msgid ""
+msgstr ""
+"Project-Id-Version: Damped Track Chain\n"
+"Language: zh\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Start Influence"
+msgstr "起始影响"
+
+msgid "Influence of the first constraint (root bone to first child)"
+msgstr "第一个约束的影响（根骨骼到第一个子骨骼）"
+
+msgid "Step Value"
+msgstr "步进值"
+
+msgid "Amount of influence change per bone deeper in the chain"
+msgstr "骨骼链每深一层的影响变化量"
+
+msgctxt "Operator"
+msgid "Decrease"
+msgstr "递减"
+
+msgid "Decrease"
+msgstr "递减"
+
+msgid "Decrease influence for each child bone"
+msgstr "每个子骨骼的影响递减"
+
+msgctxt "Operator"
+msgid "Increase"
+msgstr "递增"
+
+msgid "Increase"
+msgstr "递增"
+
+msgid "Increase influence for each child bone"
+msgstr "每个子骨骼的影响递增"
+
+msgid "Direction"
+msgstr "方向"
+
+msgid "Direction of influence change along the chain"
+msgstr "沿骨骼链的影响变化方向"
+
+msgid "Track Axis"
+msgstr "追踪轴"
+
+msgid "Local axis pointing to the target"
+msgstr "指向目标的本地轴"
+
+msgctxt "Operator"
+msgid "X"
+msgstr "X"
+
+msgid "Track X axis"
+msgstr "追踪 X 轴"
+
+msgctxt "Operator"
+msgid "Y"
+msgstr "Y"
+
+msgid "Track Y axis"
+msgstr "追踪 Y 轴"
+
+msgctxt "Operator"
+msgid "Z"
+msgstr "Z"
+
+msgid "Track Z axis"
+msgstr "追踪 Z 轴"
+
+msgctxt "Operator"
+msgid "-X"
+msgstr "-X"
+
+msgid "Track negative X axis"
+msgstr "追踪负 X 轴"
+
+msgctxt "Operator"
+msgid "-Y"
+msgstr "-Y"
+
+msgid "Track negative Y axis"
+msgstr "追踪负 Y 轴"
+
+msgctxt "Operator"
+msgid "-Z"
+msgstr "-Z"
+
+msgid "Track negative Z axis"
+msgstr "追踪负 Z 轴"
+
+msgctxt "Operator"
+msgid "Damped Track Chain"
+msgstr "阻尼追踪链"
+
+msgid "Rigging"
+msgstr "骨骼绑定"
+
+msgid "Add Chain"
+msgstr "添加链"
+
+msgid "Clear Chain"
+msgstr "清除链"
+
+msgctxt "Operator"
+msgid "Add Damped Track Chain"
+msgstr "添加阻尼追踪链"
+
+msgctxt "Operator"
+msgid "Remove Damped Track Chain"
+msgstr "移除阻尼追踪链"
+
+msgid "Please select bones in Pose Mode first"
+msgstr "请先在姿态模式下选择骨骼"
+
+msgid "Unable to read selected pose bones, please retry"
+msgstr "无法读取选中的姿态骨骼，请重试"
+
+msgid "No bones selected"
+msgstr "未选择骨骼"
+
+msgid "Cannot find bone: {}"
+msgstr "找不到骨骼：{}"
+
+msgid "Successfully added {} Damped Track constraint(s)"
+msgstr "成功添加 {} 个阻尼追踪约束"
+
+msgid "No constraints added, please check selected bones"
+msgstr "未添加约束，请检查选中的骨骼"
+
+msgid "No constraints found to remove"
+msgstr "未找到可移除的约束"
+
+msgid "Successfully removed {} Damped Track constraint(s)"
+msgstr "成功移除 {} 个阻尼追踪约束"

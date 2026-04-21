@@ -1,0 +1,15 @@
+schema_version = "1.0.0"
+
+id = "damped_track_chain"               
+version = "1.0.1"                       
+name = "Damped Track Chain"            
+tagline = "为骨骼链一键生成阻尼追踪约束/One-click bone chain constraints" 
+maintainer = "shengmingu"               
+type = "add-on"                         
+license = ["SPDX:GPL-3.0-or-later"]
+
+
+blender_version_min = "4.2.0"
+
+supported_languages = ["zh_HANS", "en"]
+tags = ["Animation", "Rigging"]       
