@@ -1,9 +1,10 @@
 # Damped Track Chain – Blender
+![图标](/icon.png)
 
 [English](#english) | [中文](#中文)
 
 ---
-![功能演示截图](/back.png)
+![封面](/back.png)
 
 ## 中文
 
