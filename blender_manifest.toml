@@ -12,4 +12,4 @@ license = ["SPDX:GPL-3.0-or-later"]
 blender_version_min = "4.2.0"
 
 supported_languages = ["zh_HANS", "en"]
-tags = ["Animation", "Rigging"]       
+tags = ["Rigging"]       
