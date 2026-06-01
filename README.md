@@ -4,7 +4,7 @@
 [English](#english) | [中文](#中文)
 
 ---
-![封面](/back.png)
+![图标](/background.png)
 
 ## 中文
 
