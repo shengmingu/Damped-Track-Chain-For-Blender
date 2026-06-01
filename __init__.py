@@ -99,6 +99,9 @@ class VIEW3D_PT_damped_track_chain(bpy.types.Panel):
         row.operator("pose.add_damped_track_chain", text=pgettext("Add Chain"), icon='ADD')
         row.operator("pose.remove_damped_track_chain", text=pgettext("Clear Chain"), icon='REMOVE')
 
+        col.separator()
+        col.operator("pose.select_damped_track_chain", text=pgettext("Select Chain Bones"), icon='BONE_DATA')
+
 # ==================== 添加约束操作符 ====================
 class POSE_OT_add_damped_track_chain(bpy.types.Operator):
     """Automatically add Damped Track constraints for selected bones and all their children, with influence gradient along the chain"""
@@ -193,6 +196,59 @@ class POSE_OT_add_damped_track_chain(bpy.types.Operator):
         
         return {'FINISHED'}
 
+# ==================== 选中链上骨骼操作符 ====================
+class POSE_OT_select_damped_track_chain(bpy.types.Operator):
+    """Select all bones that have Damped Track constraints in the active armature"""
+    bl_idname = "pose.select_damped_track_chain"
+    bl_label = pgettext("Select Chain Bones")
+    bl_options = {'REGISTER', 'UNDO'}
+
+    @classmethod
+    def poll(cls, context):
+        obj = context.active_object
+        if not obj or obj.type != 'ARMATURE':
+            return False
+        return context.mode == 'POSE'
+
+    def execute(self, context):
+        obj = context.active_object
+        armature = obj.data
+
+        if context.mode != 'POSE':
+            self.report({'ERROR'}, pgettext("Please enter Pose Mode first"))
+            return {'CANCELLED'}
+
+        # Switch to EDIT mode to safely modify bone selection
+        bpy.ops.object.mode_set(mode='EDIT')
+
+        # Deselect all bones first
+        for edit_bone in armature.edit_bones:
+            edit_bone.select = False
+            edit_bone.select_head = False
+            edit_bone.select_tail = False
+
+        selected_count = 0
+        for edit_bone in armature.edit_bones:
+            pose_bone = obj.pose.bones.get(edit_bone.name)
+            if not pose_bone:
+                continue
+            for c in pose_bone.constraints:
+                if c.type == 'DAMPED_TRACK' and c.name.startswith("DampedTrack_"):
+                    if c.target == obj and c.subtarget:
+                        edit_bone.select = True
+                        selected_count += 1
+                        break
+
+        # Switch back to Pose Mode
+        bpy.ops.object.mode_set(mode='POSE')
+
+        if selected_count > 0:
+            self.report({'INFO'}, pgettext("Selected {} bone(s) with Damped Track constraints").format(selected_count))
+        else:
+            self.report({'WARNING'}, pgettext("No bones with Damped Track constraints found"))
+
+        return {'FINISHED'}
+
 # ==================== 清除约束操作符 ====================
 class POSE_OT_remove_damped_track_chain(bpy.types.Operator):
     """Remove Damped Track constraints from selected bone chain and all its children"""
@@ -273,6 +329,7 @@ classes = (
     VIEW3D_PT_damped_track_chain,
     POSE_OT_add_damped_track_chain,
     POSE_OT_remove_damped_track_chain,
+    POSE_OT_select_damped_track_chain,
 )
 
 def register():

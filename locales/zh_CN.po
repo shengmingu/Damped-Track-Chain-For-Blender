@@ -135,3 +135,18 @@ msgstr "未找到可移除的约束"
 
 msgid "Successfully removed {} Damped Track constraint(s)"
 msgstr "成功移除 {} 个阻尼追踪约束"
+
+msgid "Select Chain Bones"
+msgstr "选中链上骨骼"
+
+msgid "Select all bones that have Damped Track constraints in the active armature"
+msgstr "选中当前骨架中所有带插件 Damped Track 约束的骨骼"
+
+msgid "Please enter Pose Mode first"
+msgstr "请先进入姿态模式"
+
+msgid "Selected {} bone(s) with Damped Track constraints"
+msgstr "已选中 {} 个带阻尼追踪约束的骨骼"
+
+msgid "No bones with Damped Track constraints found"
+msgstr "未找到带阻尼追踪约束的骨骼"

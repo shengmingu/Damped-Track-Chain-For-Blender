@@ -1,7 +1,7 @@
 schema_version = "1.0.0"
 
 id = "damped_track_chain"               
-version = "1.0.1"                       
+version = "1.0.2"                       
 name = "Damped Track Chain"            
 tagline = "为骨骼链一键生成阻尼追踪约束/One-click bone chain constraints" 
 maintainer = "shengmingu"               
